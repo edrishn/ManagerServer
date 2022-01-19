@@ -14,13 +14,6 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
-// app.use("/", async function (req, res, next) {
-//   try {
-//     await next();
-//   } catch (error) {
-//     res.send(error);
-//   }
-// });
 app.use("/", createMiddleware(...Services));
 app.use(function (err, req, res, next) {
   console.error(err.stack);
