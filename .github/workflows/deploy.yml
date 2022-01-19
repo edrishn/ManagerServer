@@ -18,12 +18,12 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
-          repository: edrishn/weseeserver/wesee
+          repository: edrishn/managerserver/manager
           tags: ${{ github.sha }},latest
       - name: Deploy to Caprover
         uses: dankore/github-to-caprover@v.1.0.6
         with:
           server: "https://captain.rayvarz.link"
           password: "${{ secrets.CAPROVER_PASSWORD }}"
-          appname: "wesee"
-          image: docker.pkg.github.com/edrishn/weseeserver/wesee:${{ github.sha }}
+          appname: "manager"
+          image: docker.pkg.github.com/edrishn/managerserver/manager:${{ github.sha }}
