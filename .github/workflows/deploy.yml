@@ -25,5 +25,5 @@ jobs:
         with:
           server: "https://captain.rayvarz.link"
           password: "${{ secrets.CAPROVER_PASSWORD }}"
-          appname: "manager"
+          appname: "manager-server"
           image: docker.pkg.github.com/edrishn/managerserver/manager:${{ github.sha }}
